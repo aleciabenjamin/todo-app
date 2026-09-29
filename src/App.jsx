@@ -40,8 +40,8 @@ function App() {
 				Clear List
 			</button>
 			<ul>
-				{todos.map(function(todo) {
-					return <li key={todo}>{todo}</li>
+				{todos.map(function (todo) {
+					return <li key={todo}>{todo}</li>;
 				})}
 			</ul>
 		</main>
