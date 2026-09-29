@@ -24,8 +24,8 @@ function App() {
 	}
 
 	function handleRemove(textToRemove) {
-		const kvar = todos.filter(function (todos) {
-			return todos !== textToRemove;
+		const kvar = todos.filter(function (todo) {
+			return todo !== textToRemove;
 		});
 		setTodos(kvar);
 	}
@@ -54,7 +54,7 @@ function App() {
 							<button
 								type="button"
 								onClick={function () {
-									handleRemove(todos);
+									handleRemove(todo);
 								}}
 							>
 								Ta Bort
