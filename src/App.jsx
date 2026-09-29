@@ -47,21 +47,25 @@ function App() {
 				Clear List
 			</button>
 			<ul>
-				{todos.map(function (todo) {
-					return (
-						<li key={todo}>
-							{todo}{" "}
-							<button
-								type="button"
-								onClick={function () {
-									handleRemove(todo);
-								}}
-							>
-								Ta Bort
-							</button>
-						</li>
-					);
-				})}
+				{todos
+					.filter(function (todo) {
+						return todo.toLowerCase().includes(draft.toLowerCase());
+					})
+					.map(function (todo) {
+						return (
+							<li key={todo}>
+								{todo}
+								<button
+									type="button"
+									onClick={function () {
+										handleRemove(todo);
+									}}
+								>
+									Ta Bort
+								</button>
+							</li>
+						);
+					})}
 			</ul>
 		</main>
 	);
