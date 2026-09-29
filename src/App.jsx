@@ -23,6 +23,13 @@ function App() {
 		setTodos([]);
 	}
 
+	function handleRemove(textToRemove) {
+		const kvar = todos.filter(function (todos) {
+			return todos !== textToRemove;
+		});
+		setTodos(kvar);
+	}
+
 	return (
 		<main>
 			<h1>Min Todo-app</h1>
@@ -41,7 +48,19 @@ function App() {
 			</button>
 			<ul>
 				{todos.map(function (todo) {
-					return <li key={todo}>{todo}</li>;
+					return (
+						<li key={todo}>
+							{todo}{" "}
+							<button
+								type="button"
+								onClick={function () {
+									handleRemove(todos);
+								}}
+							>
+								Ta Bort
+							</button>
+						</li>
+					);
 				})}
 			</ul>
 		</main>
